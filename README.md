@@ -28,7 +28,7 @@ The script will match using the [ISRC](http://en.wikipedia.org/wiki/Internationa
 
 om.rb and rdio.rb come from [rdio-simple](https://github.com/rdio/rdio-simple).
 
-The rest of this work is [licensed](blob/master/LICENSE) under the WTFPL, version 2.0.
+The rest of this work is licensed under the WTFPL, version 2.0.
 
 
 ## Comments, Questions
