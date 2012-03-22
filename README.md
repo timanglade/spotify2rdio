@@ -8,8 +8,8 @@ The script will match using the [ISRC](http://en.wikipedia.org/wiki/Internationa
 ## Requirements
 
 * A Spotify account and a Rdio account
-* A [spotify appkey](https://developer.spotify.com/en/libspotify/application-key/) — this requires that your Spotify account be “Premium” account (you can downgrade it once the script has run). Just save the appkey binary file in the same directory as this app.
-* [spotifylib](http://developer.spotify.com/en/libspotify/overview/). On Mac os, install it with: `brew install spotifylib`
+* A [spotify appkey](https://developer.spotify.com/en/libspotify/application-key/) — this requires that your Spotify account be “Premium” (you can downgrade it once the script has run). Just save the appkey binary file in the same directory as this app.
+* [libspotify](http://developer.spotify.com/en/libspotify/overview/). On Mac os, install it with: `brew install libspotify`
 * A few rubygems: `gem install hallon nokogiri open-uri rainbow`
 * A (free) [Rdio developer account](http://developer.rdio.com/member/register)
 * This was tested on 1.9.2-p290 but may work on other versions of ruby.
@@ -28,7 +28,7 @@ The script will match using the [ISRC](http://en.wikipedia.org/wiki/Internationa
 
 om.rb and rdio.rb come from [rdio-simple](https://github.com/rdio/rdio-simple).
 
-The rest of this work is [licensed](LICENSE) under the WTFPL, version 2.0.
+The rest of this work is [licensed](blob/master/LICENSE) under the WTFPL, version 2.0.
 
 
 ## Comments, Questions
