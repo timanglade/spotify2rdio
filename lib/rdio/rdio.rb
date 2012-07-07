@@ -17,7 +17,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-require './om'
+require 'rdio/om'
 require 'uri'
 require 'net/http'
 require 'cgi'
@@ -74,7 +74,7 @@ class Rdio
     res = http.request(req)
     return res.body
   end
-  
+
   def method_missing(method, *params)
     call(method.to_s, params[0])
   end

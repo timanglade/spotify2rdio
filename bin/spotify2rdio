@@ -1,30 +1,6 @@
-require 'rubygems'
-require 'hallon'
-require 'nokogiri'
-require 'open-uri'
-require 'rainbow'
-require './rdio'
-require './credentials'
+#!/usr/bin/env ruby
 
-def lookup_isrc(track, tries)
-  Nokogiri::XML(open("http://ws.spotify.com/lookup/1/?uri=#{track.to_link.to_str}")).css("id").text
-rescue
-  tries -= 1
-  sleep 1
-  retry if tries > 0
-  raise
-end
-
-def get_rdio_tracks(rdio, isrc, tries)
-  rdio.call('getTracksByISRC', {'isrc' => isrc })['result']
-rescue
-  tries -= 1
-  sleep 1
-  retry if tries > 0
-  raise
-end
-
-ENV['HALLON_APPKEY'] = File.expand_path('./spotify_appkey.key')
+require 'spotify2rdio'
 
 session = Hallon::Session.initialize IO.read(ENV['HALLON_APPKEY']) do
   on(:connection_error) do |error|
