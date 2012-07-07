@@ -1,2 +1,3 @@
 lib/spotify2rdio/credentials.rb
 *.gem
+tmp/
