@@ -20,8 +20,9 @@ The script will match using the [ISRC](http://en.wikipedia.org/wiki/Internationa
 1. Fill in lib/spotify2rdio/credentials.template.rb, save as lib/spotify2rdio/credentials.rb
 2. Save your [spotify appkey](https://developer.spotify.com/en/libspotify/application-key/) in the same directory
 3. `ruby -Ilib ./bin/spotify2rdio`
-4. Log in to Rdio & authorize the app when the script requests it
-5. Enjoy your music on Rdio.
+4. Pass your Spotify login & username when the app requests it
+5. Log in to Rdio & authorize the app when the script requests it
+6. Enjoy your music on Rdio.
 
 
 ## License & Attribution
