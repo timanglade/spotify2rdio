@@ -1,6 +1,7 @@
 require 'hallon'
 require 'nokogiri'
 require 'rainbow'
+require 'highline/import'
 
 require 'open-uri'
 
@@ -24,5 +25,3 @@ rescue
   retry if tries > 0
   raise
 end
-
-ENV['HALLON_APPKEY'] = File.expand_path('lib/spotify2rdio/spotify_appkey.key')

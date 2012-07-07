@@ -2,7 +2,10 @@
 
 require 'spotify2rdio'
 
-session = Hallon::Session.initialize IO.read(ENV['HALLON_APPKEY']) do
+spotify_username = ask("Enter your Spotify username: ")
+spotify_password = ask("Enter your Spotify password: ") { |q| q.echo = false }
+
+session = Hallon::Session.initialize IO.read(File.expand_path('lib/spotify2rdio/spotify_appkey.key')) do
   on(:connection_error) do |error|
     Hallon::Error.maybe_raise(error)
   end
@@ -12,12 +15,11 @@ session = Hallon::Session.initialize IO.read(ENV['HALLON_APPKEY']) do
   end
 end
 
-session.login!(ENV['HALLON_USERNAME'], ENV['HALLON_PASSWORD'])
+session.login!(spotify_username, spotify_password)
 
 rdio = Rdio.new([RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET])
 
-username = ENV['HALLON_USERNAME']
-playlist = Hallon::User.new(username).starred
+playlist = Hallon::User.new(spotify_username).starred
 
 keys = []
 
@@ -47,17 +49,17 @@ playlist.tracks.each do |s_track|
       end
     end
     if closest.nil?
-      puts "#{s_track.name}".color(:red)
+      puts "Could not find a match for \"#{s_track.name}\"".color(:red)
     else
       keys << closest['key']
       if closest['duration'].to_i != s_track.duration.to_i
-        puts "#{s_track.name}".color(:yellow)
+        puts "Found an imperfect match for \"#{s_track.name}\"".color(:yellow)
       else
-        puts "#{s_track.name}".color(:green)
+        puts "Found a match for \"#{s_track.name}\"".color(:green)
       end
     end
   else
-    puts "#{s_track.name}".color(:red)
+    puts "Could not find a match for \"#{s_track.name}\"".color(:red)
   end
 end
 

@@ -4,13 +4,7 @@
 # available https://developer.spotify.com/en/libspotify/application-key/
 # and place it in the same directory as the spotify2rdio.rb
 
-
-# Get these two by signing up or creating a new app
+# Get these by signing up or creating a new app
 # at http://developer.rdio.com/member/register
 RDIO_CONSUMER_KEY = ''
 RDIO_CONSUMER_SECRET = ''
-
-# Your regular (user) Spotify username & password
-ENV['HALLON_USERNAME'] = ''
-ENV['HALLON_PASSWORD'] = ''
-
