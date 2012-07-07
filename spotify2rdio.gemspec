@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
                     "lib/rdio/rdio.rb",
                     "lib/rdio/om.rb" ]
   s.homepage    = 'https://github.com/timanglade/spotify2rdio'
-  s.post_install_message = "Just run “spotify2rdio” to start moving your songs!"
+  s.post_install_message = "This utility also requires libspotify. Just `brew install libspotify` on Mac OS X, then run `spotify2rdio to start moving your songs!"
   s.required_ruby_version = '>= 1.9.2'
-  s.add_runtime_dependency  "daemons",  ["~> 0.14.0"]
+  s.add_runtime_dependency  "hallon",  ["~> 0.14.0"]
   s.add_runtime_dependency  "nokogiri", ["~> 1.5.2"]
   s.add_runtime_dependency  "rainbow",  ["~> 1.1.3"]
 end
